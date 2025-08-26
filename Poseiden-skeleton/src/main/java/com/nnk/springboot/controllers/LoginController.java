@@ -1,40 +1,43 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("app")
 public class LoginController {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private static final Logger log = LogManager.getLogger(LoginController.class);
 
-    @GetMapping("login")
-    public ModelAndView login() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("login");
-        return mav;
+    public LoginController(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    @GetMapping("secure/article-details")
-    public ModelAndView getAllUserArticles() {
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("users", userRepository.findAll());
-        mav.setViewName("user/list");
-        return mav;
+    @GetMapping("/login")
+    public String login() {
+        log.info("Displaying login page");
+        return "login";
     }
 
-    @GetMapping("error")
-    public ModelAndView error() {
-        ModelAndView mav = new ModelAndView();
-        String errorMessage= "You are not authorized for the requested data.";
-        mav.addObject("errorMsg", errorMessage);
-        mav.setViewName("403");
-        return mav;
+    @GetMapping("/secure/article-details")
+    public String getAllUserArticles(Model model) {
+        model.addAttribute("users", userRepository.findAll());
+        return "user/list";
+    }
+
+    @GetMapping("/403")
+    public String accessDenied(Model model) {
+        model.addAttribute("errorMsg", "You are not authorized for the requested resource.");
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null && auth.isAuthenticated() && !"anonymousUser".equals(auth.getPrincipal())) {
+            model.addAttribute("remoteUser", auth.getName());
+        }
+        return "403";
     }
 }

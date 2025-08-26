@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/impl/UserService.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/impl/UserService.java" />
+              <option name="originalContent" value="package com.nnk.springboot.services.impl;&#10;&#10;public class UserService {&#10;}&#10;" />
+              <option name="updatedContent" value="package com.nnk.springboot.services.impl;&#10;&#10;import com.nnk.springboot.domain.User;&#10;import com.nnk.springboot.repositories.UserRepository;&#10;import com.nnk.springboot.services.UserService;&#10;import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;&#10;import org.springframework.stereotype.Service;&#10;import org.springframework.transaction.annotation.Transactional;&#10;&#10;import java.util.List;&#10;&#10;@Service&#10;@Transactional&#10;public class UserServiceImpl implements UserService {&#10;    private final UserRepository userRepository;&#10;    private final BCryptPasswordEncoder passwordEncoder;&#10;&#10;    public UserServiceImpl(UserRepository userRepository,&#10;                       BCryptPasswordEncoder passwordEncoder) {&#10;        this.userRepository = userRepository;&#10;        this.passwordEncoder = passwordEncoder;&#10;    }&#10;&#10;    private String normalizeRole(String role) {&#10;        if (role == null || role.isBlank()) {&#10;            return &quot;ROLE_USER&quot;;&#10;        }&#10;        return role.startsWith(&quot;ROLE_&quot;) ? role : &quot;ROLE_&quot; + role;&#10;    }&#10;&#10;    @Override&#10;    public List&lt;User&gt; findAll() {&#10;        return userRepository.findAll();&#10;    }&#10;&#10;    @Override&#10;    public User findById(Integer id) {&#10;        return userRepository.findById(id)&#10;                .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Utilisateur introuvable id=&quot; + id));&#10;    }&#10;&#10;    @Override&#10;    public User findByUsername(String username) {&#10;        return userRepository.findByUsername(username)&#10;                .orElse(null);&#10;    }&#10;&#10;    @Override&#10;    public User create(User user) {&#10;        if (userRepository.findByUsername(user.getUsername()).isPresent()) {&#10;            throw new IllegalArgumentException(&quot;Username déjà utilisé&quot;);&#10;        }&#10;        user.setRole(normalizeRole(user.getRole()));&#10;        user.setPassword(passwordEncoder.encode(user.getPassword()));&#10;        return userRepository.save(user);&#10;    }&#10;&#10;    @Override&#10;    public User update(Integer id, User incoming) {&#10;        User existing = findById(id);&#10;        // mise à jour champs simples&#10;        existing.setFullname(incoming.getFullname());&#10;        existing.setRole(normalizeRole(incoming.getRole()));&#10;        if (incoming.getPassword() != null &amp;&amp; !incoming.getPassword().isBlank()) {&#10;            existing.setPassword(passwordEncoder.encode(incoming.getPassword()));&#10;        }&#10;        return userRepository.save(existing);&#10;    }&#10;&#10;    @Override&#10;    public void delete(Integer id) {&#10;        User existing = findById(id);&#10;        userRepository.delete(existing);&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

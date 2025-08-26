@@ -2,8 +2,7 @@ package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.nnk.springboot.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,8 +15,14 @@ import jakarta.validation.Valid;
 
 @Controller
 public class UserController {
-    @Autowired
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
+    private final UserService userService;
+
+    public UserController(UserRepository userRepository, UserService userService) {
+        this.userRepository = userRepository;
+        this.userService = userService;
+    }
 
     @RequestMapping("/user/list")
     public String home(Model model)
@@ -27,17 +32,21 @@ public class UserController {
     }
 
     @GetMapping("/user/add")
-    public String addUser(User bid) {
+    public String addUser(Model model) {
+        model.addAttribute("user", new User());
         return "user/add";
     }
 
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
         if (!result.hasErrors()) {
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            user.setPassword(encoder.encode(user.getPassword()));
-            userRepository.save(user);
-            model.addAttribute("users", userRepository.findAll());
+            try {
+                userService.create(user);
+            } catch (IllegalArgumentException ex) {
+                result.rejectValue("password", "error.user", ex.getMessage());
+                return "user/add";
+            }
+            model.addAttribute("users", userService.findAll());
             return "redirect:/user/list";
         }
         return "user/add";
@@ -57,12 +66,13 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/update";
         }
-
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        user.setPassword(encoder.encode(user.getPassword()));
-        user.setId(id);
-        userRepository.save(user);
-        model.addAttribute("users", userRepository.findAll());
+        try {
+            userService.update(id, user);
+        } catch (IllegalArgumentException ex) {
+            result.rejectValue("password", "error.user", ex.getMessage());
+            return "user/update";
+        }
+        model.addAttribute("users", userService.findAll());
         return "redirect:/user/list";
     }
 
