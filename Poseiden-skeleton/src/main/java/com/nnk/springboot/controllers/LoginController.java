@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 public class LoginController {
 
     private final UserRepository userRepository;
-    private static final Logger log = LogManager.getLogger(LoginController.class);
+    private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     public LoginController(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -21,18 +21,20 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login() {
-        log.info("Displaying login page");
+        logger.info("Displaying login page");
         return "login";
     }
 
     @GetMapping("/secure/article-details")
     public String getAllUserArticles(Model model) {
+        logger.info("Displaying all user articles");
         model.addAttribute("users", userRepository.findAll());
         return "user/list";
     }
 
     @GetMapping("/403")
     public String accessDenied(Model model) {
+        logger.warn("Access denied - displaying 403 page");
         model.addAttribute("errorMsg", "You are not authorized for the requested resource.");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null && auth.isAuthenticated() && !"anonymousUser".equals(auth.getPrincipal())) {

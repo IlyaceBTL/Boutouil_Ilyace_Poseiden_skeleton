@@ -3,6 +3,8 @@ package com.nnk.springboot.services.impl;
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.services.TradeService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +16,8 @@ import java.util.List;
 @Transactional
 public class TradeServiceImpl implements TradeService {
 
+    private static final Logger logger = LogManager.getLogger(TradeServiceImpl.class);
+
     private final TradeRepository repository;
 
     public TradeServiceImpl(TradeRepository repository) {
@@ -22,34 +26,50 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public List<Trade> findAll() {
-        return repository.findAll();
+        logger.debug("Fetching all trades");
+        List<Trade> list = repository.findAll();
+        logger.info("Fetched {} trades", list.size());
+        return list;
     }
 
     @Override
     public Trade findById(Integer id) {
+        logger.debug("Fetching trade id={}", id);
         return repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Trade not fount on the id=" + id));
+                .orElseThrow(() -> {
+                    logger.error("Trade not found id={}", id);
+                    return new IllegalArgumentException("Trade not fount on the id=" + id);
+                });
     }
 
     @Override
     public Trade save(Trade trade) {
+        logger.debug("Saving trade (id={})", trade.getTradeId());
         if (trade.getCreationDate() == null) {
+            logger.debug("Setting creation date for trade");
             trade.setCreationDate(Timestamp.from(Instant.now()));
         }
-        return repository.save(trade);
+        Trade saved = repository.save(trade);
+        logger.info("Trade saved id={}", saved.getTradeId());
+        return saved;
     }
 
     @Override
     public Trade update(Integer id, Trade incoming) {
+        logger.debug("Updating trade id={}", id);
         Trade existing = findById(id);
         if (incoming.getAccount() != null) existing.setAccount(incoming.getAccount());
         if (incoming.getType() != null) existing.setType(incoming.getType());
         if (incoming.getBuyQuantity() != null) existing.setBuyQuantity(incoming.getBuyQuantity());
-        return repository.save(existing);
+        Trade updated = repository.save(existing);
+        logger.info("Trade updated id={}", id);
+        return updated;
     }
 
     @Override
     public void delete(Integer id) {
+        logger.debug("Deleting trade id={}", id);
         repository.delete(findById(id));
+        logger.info("Trade deleted id={}", id);
     }
 }
