@@ -12,6 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controller for Trade entity operations.
+ */
 @Controller
 public class TradeController {
     private static final Logger logger = LogManager.getLogger(TradeController.class);
@@ -22,6 +25,11 @@ public class TradeController {
         this.tradeService = tradeService;
     }
 
+    /**
+     * Display all trades.
+     * @param model view model
+     * @return list view
+     */
     @RequestMapping("/trade/list")
     public String home(Model model) {
         logger.info("Displaying trade list");
@@ -31,12 +39,23 @@ public class TradeController {
         return "trade/list";
     }
 
+    /**
+     * Show add trade form.
+     * @param trade backing object
+     * @return add view
+     */
     @GetMapping("/trade/add")
     public String addUser(Trade trade) {
         logger.info("Displaying add trade form");
         return "trade/add";
     }
 
+    /**
+     * Validate and create a trade.
+     * @param trade entity
+     * @param result validation result
+     * @return redirect or add view on error
+     */
     @PostMapping("/trade/validate")
     public String validate(@Valid Trade trade, BindingResult result) {
         logger.info("Validating new trade");
@@ -49,6 +68,12 @@ public class TradeController {
         return "redirect:/trade/list";
     }
 
+    /**
+     * Show update form.
+     * @param id trade id
+     * @param model view model
+     * @return update view
+     */
     @GetMapping("/trade/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         logger.info("Displaying update form for trade id: {}", id);
@@ -56,6 +81,13 @@ public class TradeController {
         return "trade/update";
     }
 
+    /**
+     * Update a trade.
+     * @param id trade id
+     * @param trade updated values
+     * @param result validation result
+     * @return redirect or update view
+     */
     @PostMapping("/trade/update/{id}")
     public String updateTrade(@PathVariable("id") Integer id,
                               @Valid Trade trade,
@@ -71,6 +103,11 @@ public class TradeController {
         return "redirect:/trade/list";
     }
 
+    /**
+     * Delete a trade.
+     * @param id trade id
+     * @return redirect
+     */
     @GetMapping("/trade/delete/{id}")
     public String deleteTrade(@PathVariable("id") Integer id) {
         logger.info("Deleting trade id: {}", id);

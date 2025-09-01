@@ -10,6 +10,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Service implementation for managing BidList entities.
+ * Provides CRUD operations with logging.
+ */
 @Service
 @Transactional
 public class BidListServiceImpl implements BidListService {
@@ -22,6 +26,10 @@ public class BidListServiceImpl implements BidListService {
         this.repository = repository;
     }
 
+    /**
+     * Retrieve all BidList entries.
+     * @return list of BidList
+     */
     @Override
     public List<BidList> findAll() {
         logger.debug("Fetching all BidList entries");
@@ -30,6 +38,12 @@ public class BidListServiceImpl implements BidListService {
         return list;
     }
 
+    /**
+     * Find a BidList by its id.
+     * @param id identifier
+     * @return BidList found
+     * @throws IllegalArgumentException if not found
+     */
     @Override
     public BidList findById(Integer id) {
         logger.debug("Fetching BidList by id={}", id);
@@ -40,6 +54,12 @@ public class BidListServiceImpl implements BidListService {
                 });
     }
 
+    /**
+     * Create a new BidList (id must be null).
+     * @param bid entity to create
+     * @return created entity
+     * @throws IllegalArgumentException if id already present
+     */
     @Override
     public BidList create(BidList bid) {
         logger.debug("Creating new BidList: {}", bid);
@@ -52,6 +72,11 @@ public class BidListServiceImpl implements BidListService {
         return saved;
     }
 
+    /**
+     * Save (create or update) a BidList.
+     * @param bid entity
+     * @return saved entity
+     */
     @Override
     public BidList save(BidList bid) {
         logger.debug("Saving (upsert) BidList (may contain id={}): {}", bid.getBidListId(), bid);
@@ -60,6 +85,12 @@ public class BidListServiceImpl implements BidListService {
         return saved;
     }
 
+    /**
+     * Update an existing BidList by id.
+     * @param id target id
+     * @param bid incoming values
+     * @return updated entity
+     */
     @Override
     public BidList update(Integer id, BidList bid) {
         logger.debug("Updating BidList id={}", id);
@@ -72,6 +103,10 @@ public class BidListServiceImpl implements BidListService {
         return updated;
     }
 
+    /**
+     * Delete a BidList by id.
+     * @param id identifier
+     */
     @Override
     public void delete(Integer id) {
         logger.debug("Deleting BidList id={}", id);

@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.validation.Valid;
 
+/**
+ * Controller for User management (list/create/update/delete).
+ */
 @Controller
 public class UserController {
 
@@ -30,6 +33,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * Display user list.
+     * @param model view model
+     * @return list view
+     */
     @RequestMapping("/user/list")
     public String home(Model model)
     {
@@ -42,6 +50,11 @@ public class UserController {
         return "user/list";
     }
 
+    /**
+     * Show add user form.
+     * @param model view model
+     * @return add view
+     */
     @GetMapping("/user/add")
     public String addUser(Model model) {
         logger.info("Displaying add user form");
@@ -49,6 +62,13 @@ public class UserController {
         return "user/add";
     }
 
+    /**
+     * Validate and create user.
+     * @param user entity
+     * @param result validation result
+     * @param model view model
+     * @return redirect or add view
+     */
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
         logger.info("Validating new user");
@@ -68,6 +88,12 @@ public class UserController {
         return "user/add";
     }
 
+    /**
+     * Show update form.
+     * @param id user id
+     * @param model view model
+     * @return update view
+     */
     @GetMapping("/user/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         logger.info("Displaying update form for user id: {}", id);
@@ -77,6 +103,14 @@ public class UserController {
         return "user/update";
     }
 
+    /**
+     * Update user.
+     * @param id user id
+     * @param user updated data
+     * @param result validation result
+     * @param model view model
+     * @return redirect or update view
+     */
     @PostMapping("/user/update/{id}")
     public String updateUser(@PathVariable("id") Integer id, @Valid User user,
                              BindingResult result, Model model) {
@@ -97,6 +131,12 @@ public class UserController {
         return "redirect:/user/list";
     }
 
+    /**
+     * Delete user.
+     * @param id user id
+     * @param model view model
+     * @return redirect
+     */
     @GetMapping("/user/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id, Model model) {
         logger.info("Deleting user id: {}", id);

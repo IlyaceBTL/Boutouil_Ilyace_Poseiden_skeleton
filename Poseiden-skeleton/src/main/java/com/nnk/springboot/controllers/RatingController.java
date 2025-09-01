@@ -12,6 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controller for Rating CRUD operations.
+ */
 @Controller
 public class RatingController {
 
@@ -24,6 +27,11 @@ public class RatingController {
         this.ratingService = ratingService;
     }
 
+    /**
+     * List all ratings.
+     * @param model view model
+     * @return list view
+     */
     @RequestMapping("/rating/list")
     public String home(Model model)
     {
@@ -34,12 +42,23 @@ public class RatingController {
         return "rating/list";
     }
 
+    /**
+     * Show add form.
+     * @param rating backing object
+     * @return add view
+     */
     @GetMapping("/rating/add")
     public String addRatingForm(Rating rating) {
         logger.info("Displaying add rating form");
         return "rating/add";
     }
 
+    /**
+     * Validate and create rating.
+     * @param rating entity
+     * @param result validation result
+     * @return redirect or add form view
+     */
     @PostMapping("/rating/validate")
     public String validate(@Valid Rating rating, BindingResult result) {
         logger.info("Validating new rating");
@@ -52,6 +71,12 @@ public class RatingController {
         return "redirect:/rating/list";
     }
 
+    /**
+     * Show update form.
+     * @param id rating id
+     * @param model view model
+     * @return update view
+     */
     @GetMapping("/rating/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         logger.info("Displaying update form for rating id: {}", id);
@@ -60,6 +85,13 @@ public class RatingController {
         return "rating/update";
     }
 
+    /**
+     * Update rating.
+     * @param id rating id
+     * @param rating updated values
+     * @param result validation result
+     * @return redirect or update view
+     */
     @PostMapping("/rating/update/{id}")
     public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating,
                                BindingResult result) {
@@ -74,6 +106,11 @@ public class RatingController {
         return "redirect:/rating/list";
     }
 
+    /**
+     * Delete rating.
+     * @param id rating id
+     * @return redirect
+     */
     @GetMapping("/rating/delete/{id}")
     public String deleteRating(@PathVariable("id") Integer id) {
         logger.info("Deleting rating id: {}", id);

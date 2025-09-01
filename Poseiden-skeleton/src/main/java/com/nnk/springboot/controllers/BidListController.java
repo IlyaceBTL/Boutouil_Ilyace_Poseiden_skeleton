@@ -12,6 +12,10 @@ import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+/**
+ * Controller handling CRUD operations for BidList.
+ * Provides list, create, update and delete endpoints.
+ */
 @Controller
 @RequestMapping("/bidList")
 public class BidListController {
@@ -24,6 +28,11 @@ public class BidListController {
         this.bidListService = bidListService;
     }
 
+    /**
+     * Display all bids.
+     * @param model view model
+     * @return list view name
+     */
     @GetMapping("/list")
     public String home(Model model) {
         logger.info("Displaying bid list");
@@ -33,6 +42,11 @@ public class BidListController {
         return "bidList/list";
     }
 
+    /**
+     * Show add form.
+     * @param model view model
+     * @return add form view
+     */
     @GetMapping("/add")
     public String addBidForm(Model model) {
         logger.info("Displaying add bid form");
@@ -40,6 +54,12 @@ public class BidListController {
         return "bidList/add";
     }
 
+    /**
+     * Validate and persist a new bid.
+     * @param bid bid entity
+     * @param result validation result
+     * @return redirect or form view on error
+     */
     @PostMapping("/validate")
     public String validate(@Valid @ModelAttribute("bidList") BidList bid, BindingResult result) {
         logger.info("Validating new bid");
@@ -52,6 +72,12 @@ public class BidListController {
         return "redirect:/bidList/list";
     }
 
+    /**
+     * Show update form for a bid.
+     * @param id bid id
+     * @param model view model
+     * @return update view
+     */
     @GetMapping("/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         logger.info("Displaying update form for bid id: {}", id);
@@ -59,6 +85,13 @@ public class BidListController {
         return "bidList/update";
     }
 
+    /**
+     * Apply updates to a bid.
+     * @param id bid id
+     * @param bidList updated data
+     * @param result validation result
+     * @return redirect or update view on error
+     */
     @PostMapping("/update/{id}")
     public String updateBid(@PathVariable("id") Integer id,
                             @Valid @ModelAttribute("bidList") BidList bidList,
@@ -74,6 +107,11 @@ public class BidListController {
         return "redirect:/bidList/list";
     }
 
+    /**
+     * Delete a bid.
+     * @param id bid id
+     * @return redirect to list
+     */
     @GetMapping("/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id) {
         logger.info("Deleting bid id: {}", id);

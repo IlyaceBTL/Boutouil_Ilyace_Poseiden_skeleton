@@ -11,9 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Service implementation for User management including password encoding
+ * and simple role normalization.
+ */
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
+
     private static final Logger logger = LogManager.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
@@ -36,6 +41,10 @@ public class UserServiceImpl implements UserService {
         return valid;
     }
 
+    /**
+     * Get all users.
+     * @return list of users
+     */
     @Override
     public List<User> findAll() {
         logger.debug("Fetching all users");
@@ -44,6 +53,12 @@ public class UserServiceImpl implements UserService {
         return list;
     }
 
+    /**
+     * Find user by id.
+     * @param id user id
+     * @return user
+     * @throws IllegalArgumentException if not found
+     */
     @Override
     public User findById(Integer id) {
         logger.debug("Fetching user id={}", id);
@@ -54,12 +69,23 @@ public class UserServiceImpl implements UserService {
                 });
     }
 
+    /**
+     * Find user by username.
+     * @param username login name
+     * @return user or null
+     */
     @Override
     public User findByUsername(String username) {
         logger.debug("Fetching user by username={}", username);
         return userRepository.findByUsername(username).orElse(null);
     }
 
+    /**
+     * Create a new user after validation and password encoding.
+     * @param user incoming user
+     * @return created user
+     * @throws IllegalArgumentException on validation failure
+     */
     @Override
     public User create(User user) {
         logger.debug("Creating user username={}", user.getUsername());
@@ -82,6 +108,13 @@ public class UserServiceImpl implements UserService {
         return saved;
     }
 
+    /**
+     * Update existing user fields (fullname, role, password if provided).
+     * @param id user id
+     * @param incoming new values
+     * @return updated user
+     * @throws IllegalArgumentException on validation failure
+     */
     @Override
     public User update(Integer id, User incoming) {
         logger.debug("Updating user id={}", id);
@@ -100,6 +133,10 @@ public class UserServiceImpl implements UserService {
         return updated;
     }
 
+    /**
+     * Delete a user.
+     * @param id user id
+     */
     @Override
     public void delete(Integer id) {
         logger.debug("Deleting user id={}", id);

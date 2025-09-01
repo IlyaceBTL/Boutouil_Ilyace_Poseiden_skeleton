@@ -12,6 +12,9 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.List;
 
+/**
+ * Service implementation handling Trade persistence and updates.
+ */
 @Service
 @Transactional
 public class TradeServiceImpl implements TradeService {
@@ -24,6 +27,10 @@ public class TradeServiceImpl implements TradeService {
         this.repository = repository;
     }
 
+    /**
+     * Get all trades.
+     * @return list of trades
+     */
     @Override
     public List<Trade> findAll() {
         logger.debug("Fetching all trades");
@@ -32,6 +39,12 @@ public class TradeServiceImpl implements TradeService {
         return list;
     }
 
+    /**
+     * Find a trade by id.
+     * @param id trade id
+     * @return trade
+     * @throws IllegalArgumentException if not found
+     */
     @Override
     public Trade findById(Integer id) {
         logger.debug("Fetching trade id={}", id);
@@ -42,6 +55,11 @@ public class TradeServiceImpl implements TradeService {
                 });
     }
 
+    /**
+     * Save (create or update) a trade. Sets creation date if absent.
+     * @param trade trade entity
+     * @return saved trade
+     */
     @Override
     public Trade save(Trade trade) {
         logger.debug("Saving trade (id={})", trade.getTradeId());
@@ -54,6 +72,12 @@ public class TradeServiceImpl implements TradeService {
         return saved;
     }
 
+    /**
+     * Update selected mutable fields of a trade.
+     * @param id trade id
+     * @param incoming values to apply
+     * @return updated trade
+     */
     @Override
     public Trade update(Integer id, Trade incoming) {
         logger.debug("Updating trade id={}", id);
@@ -66,6 +90,10 @@ public class TradeServiceImpl implements TradeService {
         return updated;
     }
 
+    /**
+     * Delete a trade by id.
+     * @param id trade id
+     */
     @Override
     public void delete(Integer id) {
         logger.debug("Deleting trade id={}", id);

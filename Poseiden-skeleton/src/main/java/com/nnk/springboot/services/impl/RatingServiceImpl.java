@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Service implementation for Rating entity operations.
+ */
 @Service
 @Transactional
 public class RatingServiceImpl implements RatingService {
@@ -22,6 +25,10 @@ public class RatingServiceImpl implements RatingService {
         this.repository = repository;
     }
 
+    /**
+     * Get all ratings.
+     * @return list of ratings
+     */
     @Override
     public List<Rating> findAll() {
         logger.debug("Fetching all ratings");
@@ -30,6 +37,12 @@ public class RatingServiceImpl implements RatingService {
         return list;
     }
 
+    /**
+     * Find rating by id.
+     * @param id identifier
+     * @return rating
+     * @throws IllegalArgumentException if not found
+     */
     @Override
     public Rating findById(Integer id) {
         logger.debug("Fetching rating id={}", id);
@@ -40,6 +53,11 @@ public class RatingServiceImpl implements RatingService {
                 });
     }
 
+    /**
+     * Create a new rating (id must be null).
+     * @param rating entity
+     * @return created rating
+     */
     @Override
     public Rating create(Rating rating) {
         logger.debug("Creating rating");
@@ -52,6 +70,11 @@ public class RatingServiceImpl implements RatingService {
         return saved;
     }
 
+    /**
+     * Save (create/update) rating.
+     * @param rating entity
+     * @return saved rating
+     */
     @Override
     public Rating save(Rating rating) {
         logger.debug("Saving (upsert) rating id={}", rating.getId());
@@ -60,6 +83,12 @@ public class RatingServiceImpl implements RatingService {
         return saved;
     }
 
+    /**
+     * Update mutable fields of a rating.
+     * @param id rating id
+     * @param incoming new values
+     * @return updated rating
+     */
     @Override
     public Rating update(Integer id, Rating incoming) {
         logger.debug("Updating rating id={}", id);
@@ -73,6 +102,10 @@ public class RatingServiceImpl implements RatingService {
         return updated;
     }
 
+    /**
+     * Delete rating by id.
+     * @param id identifier
+     */
     @Override
     public void delete(Integer id) {
         logger.debug("Deleting rating id={}", id);

@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Service implementation for RuleName entity CRUD operations.
+ */
 @Service
 @Transactional
 public class RuleNameServiceImpl implements RuleNameService {
@@ -21,6 +24,10 @@ public class RuleNameServiceImpl implements RuleNameService {
         this.repository = repository;
     }
 
+    /**
+     * Get all rule names.
+     * @return list
+     */
     @Override
     public List<RuleName> findAll() {
         logger.debug("Fetching all RuleName entries");
@@ -29,6 +36,12 @@ public class RuleNameServiceImpl implements RuleNameService {
         return list;
     }
 
+    /**
+     * Find rule name by id.
+     * @param id identifier
+     * @return rule name
+     * @throws IllegalArgumentException if not found
+     */
     @Override
     public RuleName findById(Integer id) {
         logger.debug("Fetching RuleName id={}", id);
@@ -39,6 +52,11 @@ public class RuleNameServiceImpl implements RuleNameService {
                 });
     }
 
+    /**
+     * Create a new rule name.
+     * @param ruleName entity
+     * @return created entity
+     */
     @Override
     public RuleName create(RuleName ruleName) {
         logger.debug("Creating RuleName");
@@ -47,6 +65,12 @@ public class RuleNameServiceImpl implements RuleNameService {
         return saved;
     }
 
+    /**
+     * Update an existing rule name.
+     * @param id id to update
+     * @param incoming values to apply
+     * @return updated entity
+     */
     @Override
     public RuleName update(Integer id, RuleName incoming) {
         logger.debug("Updating RuleName id={}", id);
@@ -62,6 +86,10 @@ public class RuleNameServiceImpl implements RuleNameService {
         return updated;
     }
 
+    /**
+     * Delete a rule name.
+     * @param id identifier
+     */
     @Override
     public void delete(Integer id) {
         logger.debug("Deleting RuleName id={}", id);

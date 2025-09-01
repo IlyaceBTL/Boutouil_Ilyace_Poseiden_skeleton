@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
 
+/**
+ * Controller for RuleName CRUD lifecycle.
+ */
 @Controller
 @RequestMapping("/ruleName")
 public class RuleNameController {
@@ -25,6 +28,11 @@ public class RuleNameController {
         this.ruleNameService = ruleNameService;
     }
 
+    /**
+     * Display all rule names.
+     * @param model view model
+     * @return list view
+     */
     @GetMapping("/list")
     public String home(Model model) {
         logger.info("Displaying rule name list");
@@ -35,6 +43,11 @@ public class RuleNameController {
         return "ruleName/list";
     }
 
+    /**
+     * Show add rule name form.
+     * @param model view model
+     * @return add view
+     */
     @GetMapping("/add")
     public String addRuleForm(Model model) {
         logger.info("Displaying add rule name form");
@@ -42,6 +55,12 @@ public class RuleNameController {
         return "ruleName/add";
     }
 
+    /**
+     * Validate and create a rule name.
+     * @param ruleName entity
+     * @param result validation result
+     * @return redirect or form view
+     */
     @PostMapping("/validate")
     public String validate(@Valid @ModelAttribute("ruleName") RuleName ruleName, BindingResult result) {
         logger.info("Validating new rule name");
@@ -54,6 +73,12 @@ public class RuleNameController {
         return "redirect:/ruleName/list";
     }
 
+    /**
+     * Show update form.
+     * @param id rule id
+     * @param model view model
+     * @return update view
+     */
     @GetMapping("/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         logger.info("Displaying update form for rule name id: {}", id);
@@ -62,6 +87,13 @@ public class RuleNameController {
         return "ruleName/update";
     }
 
+    /**
+     * Update a rule name.
+     * @param id rule id
+     * @param ruleName updated values
+     * @param result validation result
+     * @return redirect or update view
+     */
     @PostMapping("/update/{id}")
     public String updateRuleName(@PathVariable("id") Integer id, @Valid @ModelAttribute("ruleName") RuleName ruleName,
                                  BindingResult result) {
@@ -76,6 +108,11 @@ public class RuleNameController {
         return "redirect:/ruleName/list";
     }
 
+    /**
+     * Delete a rule name.
+     * @param id rule id
+     * @return redirect
+     */
     @GetMapping("/delete/{id}")
     public String deleteRuleName(@PathVariable("id") Integer id) {
         logger.info("Deleting rule name id: {}", id);

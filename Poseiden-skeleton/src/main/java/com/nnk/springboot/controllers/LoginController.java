@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
+/**
+ * Authentication and access control related endpoints.
+ */
 @Controller
 public class LoginController {
 
@@ -19,12 +22,21 @@ public class LoginController {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Show login page.
+     * @return login view
+     */
     @GetMapping("/login")
     public String login() {
         logger.info("Displaying login page");
         return "login";
     }
 
+    /**
+     * Display secured article details (users list).
+     * @param model view model
+     * @return user list view
+     */
     @GetMapping("/secure/article-details")
     public String getAllUserArticles(Model model) {
         logger.info("Displaying all user articles");
@@ -32,6 +44,11 @@ public class LoginController {
         return "user/list";
     }
 
+    /**
+     * Access denied handler.
+     * @param model view model
+     * @return 403 view
+     */
     @GetMapping("/403")
     public String accessDenied(Model model) {
         logger.warn("Access denied - displaying 403 page");
