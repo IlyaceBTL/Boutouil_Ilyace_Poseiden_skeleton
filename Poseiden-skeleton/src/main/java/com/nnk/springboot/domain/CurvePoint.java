@@ -33,4 +33,11 @@ public class CurvePoint {
 
     @Column(name = "creationDate")
     private Timestamp creationDate;
+
+    public CurvePoint(Integer curveId, Timestamp asOfDate, Double term, Double value) {
+        this.curveId = curveId;
+        this.asOfDate = asOfDate;
+        this.term = term;
+        this.value = value;
+    }
 }
