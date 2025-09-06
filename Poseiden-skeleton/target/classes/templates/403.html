@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+      <title>Accès refusé</title>
+</head>
+<body>
+   <h3>Accès refusé</h3>
+   <div>
+       Utilisateur connecté :
+       <b th:text="${remoteUser} ?: 'Anonyme'">Anonyme</b>
+       <form th:action="@{/logout}" method="post" style="display:inline">
+           <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+           <input type="submit" value="Logout"/>
+       </form>
+   </div>
+   <p class="error" th:text="${errorMsg}">Erreur</p>
+</body>
+</html>

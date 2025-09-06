@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.nnk.springboot.integration.BidControllerIntegrationTest" time="5.86" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\ilyac\Documents\OC\Boutouil_Ilyace_P7_05082025\Poseiden-skeleton\target\test-classes;C:\Users\ilyac\Documents\OC\Boutouil_Ilyace_P7_05082025\Poseiden-skeleton\target\classes;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.0\spring-boot-starter-test-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.0\spring-boot-starter-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.0\spring-boot-starter-logging-3.1.0.jar;C:\Users\ilyac\.m2\repository\ch\qos\logback\logback-classic\1.4.7\logback-classic-1.4.7.jar;C:\Users\ilyac\.m2\repository\ch\qos\logback\logback-core\1.4.7\logback-core-1.4.7.jar;C:\Users\ilyac\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\ilyac\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\ilyac\.m2\repository\org\slf4j\jul-to-slf4j\2.0.7\jul-to-slf4j-2.0.7.jar;C:\Users\ilyac\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\ilyac\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-test\3.1.0\spring-boot-test-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.0\spring-boot-test-autoconfigure-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\ilyac\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\ilyac\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\ilyac\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\ilyac\.m2\repository\net\minidev\json-smart\2.4.10\json-smart-2.4.10.jar;C:\Users\ilyac\.m2\repository\net\minidev\accessors-smart\2.4.9\accessors-smart-2.4.9.jar;C:\Users\ilyac\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\ilyac\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\ilyac\.m2\repository\net\bytebuddy\byte-buddy\1.14.4\byte-buddy-1.14.4.jar;C:\Users\ilyac\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\ilyac\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.4\byte-buddy-agent-1.14.4.jar;C:\Users\ilyac\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\ilyac\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\ilyac\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\ilyac\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-core\6.0.9\spring-core-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-jcl\6.0.9\spring-jcl-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-test\6.0.9\spring-test-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.0\spring-boot-starter-data-jpa-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.0\spring-boot-starter-aop-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\aspectj\aspectjweaver\1.9.19\aspectjweaver-1.9.19.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.0\spring-boot-starter-jdbc-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-jdbc\6.0.9\spring-jdbc-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\hibernate\orm\hibernate-core\6.2.2.Final\hibernate-core-6.2.2.Final.jar;C:\Users\ilyac\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\ilyac\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\ilyac\.m2\repository\org\jboss\logging\jboss-logging\3.5.0.Final\jboss-logging-3.5.0.Final.jar;C:\Users\ilyac\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\ilyac\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\ilyac\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.2\jaxb-runtime-4.0.2.jar;C:\Users\ilyac\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.2\jaxb-core-4.0.2.jar;C:\Users\ilyac\.m2\repository\org\eclipse\angus\angus-activation\2.0.0\angus-activation-2.0.0.jar;C:\Users\ilyac\.m2\repository\org\glassfish\jaxb\txw2\4.0.2\txw2-4.0.2.jar;C:\Users\ilyac\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.1\istack-commons-runtime-4.1.1.jar;C:\Users\ilyac\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\ilyac\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\ilyac\.m2\repository\org\springframework\data\spring-data-jpa\3.1.0\spring-data-jpa-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\data\spring-data-commons\3.1.0\spring-data-commons-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-orm\6.0.9\spring-orm-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-context\6.0.9\spring-context-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-tx\6.0.9\spring-tx-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-beans\6.0.9\spring-beans-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-aspects\6.0.9\spring-aspects-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.0\spring-boot-starter-web-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.0\spring-boot-starter-json-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.0\jackson-databind-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.0\jackson-annotations-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.0\jackson-core-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.0\jackson-datatype-jdk8-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.0\jackson-datatype-jsr310-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.0\jackson-module-parameter-names-2.15.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.0\spring-boot-starter-tomcat-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.8\tomcat-embed-core-10.1.8.jar;C:\Users\ilyac\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.8\tomcat-embed-websocket-10.1.8.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-web\6.0.9\spring-web-6.0.9.jar;C:\Users\ilyac\.m2\repository\io\micrometer\micrometer-observation\1.11.0\micrometer-observation-1.11.0.jar;C:\Users\ilyac\.m2\repository\io\micrometer\micrometer-commons\1.11.0\micrometer-commons-1.11.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-webmvc\6.0.9\spring-webmvc-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-expression\6.0.9\spring-expression-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.1.0\spring-boot-starter-thymeleaf-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.1.RELEASE\thymeleaf-spring6-3.1.1.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\thymeleaf\thymeleaf\3.1.1.RELEASE\thymeleaf-3.1.1.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\attoparser\attoparser\2.0.6.RELEASE\attoparser-2.0.6.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.0\spring-boot-starter-validation-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.8\tomcat-embed-el-10.1.8.jar;C:\Users\ilyac\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.0.Final\hibernate-validator-8.0.0.Final.jar;C:\Users\ilyac\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.1.0\spring-boot-starter-security-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-aop\6.0.9\spring-aop-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-config\6.1.0\spring-security-config-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-web\6.1.0\spring-security-web-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-devtools\3.1.0\spring-boot-devtools-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot\3.1.0\spring-boot-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.0\spring-boot-autoconfigure-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\ilyac\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\ilyac\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ilyac\.m2\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;C:\Users\ilyac\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\ilyac\.m2\repository\org\junit\vintage\junit-vintage-engine\5.9.3\junit-vintage-engine-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\ilyac\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ilyac\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\ilyac\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-test\6.1.0\spring-security-test-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-core\6.1.0\spring-security-core-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-crypto\6.1.0\spring-security-crypto-6.1.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\ilyac\AppData\Local\Temp\surefire14221302743391868190\surefirebooter-20250906123335524_3.jar C:\Users\ilyac\AppData\Local\Temp\surefire14221302743391868190 2025-09-06T12-33-35_409-jvmRun1 surefire-20250906123335524_1tmp surefire_0-20250906123335524_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\ilyac\Documents\OC\Boutouil_Ilyace_P7_05082025\Poseiden-skeleton\target\test-classes;C:\Users\ilyac\Documents\OC\Boutouil_Ilyace_P7_05082025\Poseiden-skeleton\target\classes;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.0\spring-boot-starter-test-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.0\spring-boot-starter-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.0\spring-boot-starter-logging-3.1.0.jar;C:\Users\ilyac\.m2\repository\ch\qos\logback\logback-classic\1.4.7\logback-classic-1.4.7.jar;C:\Users\ilyac\.m2\repository\ch\qos\logback\logback-core\1.4.7\logback-core-1.4.7.jar;C:\Users\ilyac\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\ilyac\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\ilyac\.m2\repository\org\slf4j\jul-to-slf4j\2.0.7\jul-to-slf4j-2.0.7.jar;C:\Users\ilyac\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\ilyac\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-test\3.1.0\spring-boot-test-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.0\spring-boot-test-autoconfigure-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\ilyac\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\ilyac\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\ilyac\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\ilyac\.m2\repository\net\minidev\json-smart\2.4.10\json-smart-2.4.10.jar;C:\Users\ilyac\.m2\repository\net\minidev\accessors-smart\2.4.9\accessors-smart-2.4.9.jar;C:\Users\ilyac\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\ilyac\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\ilyac\.m2\repository\net\bytebuddy\byte-buddy\1.14.4\byte-buddy-1.14.4.jar;C:\Users\ilyac\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\ilyac\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.4\byte-buddy-agent-1.14.4.jar;C:\Users\ilyac\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\ilyac\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\ilyac\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\ilyac\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-core\6.0.9\spring-core-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-jcl\6.0.9\spring-jcl-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-test\6.0.9\spring-test-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.0\spring-boot-starter-data-jpa-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.0\spring-boot-starter-aop-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\aspectj\aspectjweaver\1.9.19\aspectjweaver-1.9.19.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.0\spring-boot-starter-jdbc-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-jdbc\6.0.9\spring-jdbc-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\hibernate\orm\hibernate-core\6.2.2.Final\hibernate-core-6.2.2.Final.jar;C:\Users\ilyac\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\ilyac\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\ilyac\.m2\repository\org\jboss\logging\jboss-logging\3.5.0.Final\jboss-logging-3.5.0.Final.jar;C:\Users\ilyac\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\ilyac\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\ilyac\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.2\jaxb-runtime-4.0.2.jar;C:\Users\ilyac\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.2\jaxb-core-4.0.2.jar;C:\Users\ilyac\.m2\repository\org\eclipse\angus\angus-activation\2.0.0\angus-activation-2.0.0.jar;C:\Users\ilyac\.m2\repository\org\glassfish\jaxb\txw2\4.0.2\txw2-4.0.2.jar;C:\Users\ilyac\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.1\istack-commons-runtime-4.1.1.jar;C:\Users\ilyac\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\ilyac\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\ilyac\.m2\repository\org\springframework\data\spring-data-jpa\3.1.0\spring-data-jpa-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\data\spring-data-commons\3.1.0\spring-data-commons-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-orm\6.0.9\spring-orm-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-context\6.0.9\spring-context-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-tx\6.0.9\spring-tx-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-beans\6.0.9\spring-beans-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-aspects\6.0.9\spring-aspects-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.0\spring-boot-starter-web-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.0\spring-boot-starter-json-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.0\jackson-databind-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.0\jackson-annotations-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.0\jackson-core-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.0\jackson-datatype-jdk8-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.0\jackson-datatype-jsr310-2.15.0.jar;C:\Users\ilyac\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.0\jackson-module-parameter-names-2.15.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.0\spring-boot-starter-tomcat-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.8\tomcat-embed-core-10.1.8.jar;C:\Users\ilyac\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.8\tomcat-embed-websocket-10.1.8.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-web\6.0.9\spring-web-6.0.9.jar;C:\Users\ilyac\.m2\repository\io\micrometer\micrometer-observation\1.11.0\micrometer-observation-1.11.0.jar;C:\Users\ilyac\.m2\repository\io\micrometer\micrometer-commons\1.11.0\micrometer-commons-1.11.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-webmvc\6.0.9\spring-webmvc-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-expression\6.0.9\spring-expression-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.1.0\spring-boot-starter-thymeleaf-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.1.RELEASE\thymeleaf-spring6-3.1.1.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\thymeleaf\thymeleaf\3.1.1.RELEASE\thymeleaf-3.1.1.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\attoparser\attoparser\2.0.6.RELEASE\attoparser-2.0.6.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.0\spring-boot-starter-validation-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.8\tomcat-embed-el-10.1.8.jar;C:\Users\ilyac\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.0.Final\hibernate-validator-8.0.0.Final.jar;C:\Users\ilyac\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.1.0\spring-boot-starter-security-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\spring-aop\6.0.9\spring-aop-6.0.9.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-config\6.1.0\spring-security-config-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-web\6.1.0\spring-security-web-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-devtools\3.1.0\spring-boot-devtools-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot\3.1.0\spring-boot-3.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.0\spring-boot-autoconfigure-3.1.0.jar;C:\Users\ilyac\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\ilyac\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\ilyac\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ilyac\.m2\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;C:\Users\ilyac\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\ilyac\.m2\repository\org\junit\vintage\junit-vintage-engine\5.9.3\junit-vintage-engine-5.9.3.jar;C:\Users\ilyac\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\ilyac\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ilyac\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\ilyac\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-test\6.1.0\spring-security-test-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-core\6.1.0\spring-security-core-6.1.0.jar;C:\Users\ilyac\.m2\repository\org\springframework\security\spring-security-crypto\6.1.0\spring-security-crypto-6.1.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\ilyac"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-10-19"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\ilyac\Documents\OC\Boutouil_Ilyace_P7_05082025\Poseiden-skeleton"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="windows-1252"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\ilyac\AppData\Local\Temp\surefire14221302743391868190\surefirebooter-20250906123335524_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
+    <property name="user.name" value="ilyac"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="C:\Users\ilyac\AppData\Roaming\JetBrains\IdeaIC2025.2\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="localRepository" value="C:\Users\ilyac\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ilyac\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2025.2.1"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="17.0.1"/>
+    <property name="user.dir" value="C:\Users\ilyac\Documents\OC\Boutouil_Ilyace_P7_05082025\Poseiden-skeleton"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="16108"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Apache\Maven\apache-maven-3.9.10\bin;C:\Program Files\MySQL\MySQL Workbench 8.0 CE;;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ilyac\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.2\bin;;C:\Users\ilyac\AppData\Roaming\npm;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.1+12-LTS-39"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="maven.repo.local" value="C:\Users\ilyac\.m2\repository"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testValidateBid" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.645">
+    <system-out><![CDATA[12:33:36.479 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.BidListServiceTest]: BidListServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:36.676 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.BidListServiceTest
+12:33:36.941 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.BidTest]: BidTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:36.943 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.BidTest
+12:33:36.948 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.CurvePointServiceTest]: CurvePointServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:36.950 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.CurvePointServiceTest
+12:33:36.956 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.CurvePointTest]: CurvePointTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:36.957 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.CurvePointTest
+12:33:37.060 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.PasswordEncodeTest]: PasswordEncodeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.061 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.PasswordEncodeTest
+12:33:37.066 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RatingServiceTest]: RatingServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.067 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RatingServiceTest
+12:33:37.071 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RatingTest]: RatingTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.073 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RatingTest
+12:33:37.078 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RuleNameServiceTest]: RuleNameServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.079 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RuleNameServiceTest
+12:33:37.084 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RuleTest]: RuleTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.085 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RuleTest
+12:33:37.089 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.TradeServiceTest]: TradeServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.090 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.TradeServiceTest
+12:33:37.094 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.TradeTest]: TradeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.095 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.TradeTest
+12:33:37.099 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.100 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.UserServiceTest
+12:33:37.105 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.UserTest]: UserTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.106 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.UserTest
+12:33:37.122 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.BidListServiceTest]: BidListServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.123 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.BidListServiceTest
+12:33:37.126 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.BidTest]: BidTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.126 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.BidTest
+12:33:37.130 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.CurvePointServiceTest]: CurvePointServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.136 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.CurvePointServiceTest
+12:33:37.144 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.CurvePointTest]: CurvePointTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.145 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.CurvePointTest
+12:33:37.147 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.PasswordEncodeTest]: PasswordEncodeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.147 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.PasswordEncodeTest
+12:33:37.149 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RatingServiceTest]: RatingServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.149 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RatingServiceTest
+12:33:37.151 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RatingTest]: RatingTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.151 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RatingTest
+12:33:37.153 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RuleNameServiceTest]: RuleNameServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.153 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RuleNameServiceTest
+12:33:37.155 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.RuleTest]: RuleTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.155 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RuleTest
+12:33:37.156 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.TradeServiceTest]: TradeServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.157 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.TradeServiceTest
+12:33:37.158 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.TradeTest]: TradeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.159 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.TradeTest
+12:33:37.160 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.161 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.UserServiceTest
+12:33:37.162 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.UserTest]: UserTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.163 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.UserTest
+12:33:37.250 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nnk.springboot.integration.BidControllerIntegrationTest]: BidControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:33:37.281 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.integration.BidControllerIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2025-09-06T12:33:37.722+02:00  INFO 16108 --- [           main] c.n.s.i.BidControllerIntegrationTest     : Starting BidControllerIntegrationTest using Java 17.0.1 with PID 16108 (started by ilyac in C:\Users\ilyac\Documents\OC\Boutouil_Ilyace_P7_05082025\Poseiden-skeleton)
+2025-09-06T12:33:37.725+02:00  INFO 16108 --- [           main] c.n.s.i.BidControllerIntegrationTest     : The following 1 profile is active: "test"
+2025-09-06T12:33:38.544+02:00  INFO 16108 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-06T12:33:38.657+02:00  INFO 16108 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2025-09-06T12:33:39.198+02:00  INFO 16108 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-06T12:33:39.260+02:00  INFO 16108 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2025-09-06T12:33:39.262+02:00  INFO 16108 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2025-09-06T12:33:39.418+02:00  INFO 16108 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-09-06T12:33:39.551+02:00  INFO 16108 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-06T12:33:39.566+02:00  INFO 16108 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-06T12:33:39.744+02:00  INFO 16108 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2cbd35f2
+2025-09-06T12:33:39.746+02:00  INFO 16108 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-06T12:33:39.787+02:00  INFO 16108 --- [           main] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
+2025-09-06T12:33:39.788+02:00  WARN 16108 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-09-06T12:33:40.065+02:00  INFO 16108 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-09-06T12:33:40.728+02:00  INFO 16108 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: drop table if exists bid_list
+Hibernate: drop table if exists curve_point
+Hibernate: drop table if exists rating
+Hibernate: drop table if exists rule_name
+Hibernate: drop table if exists trade
+Hibernate: drop table if exists users
+Hibernate: drop table if exists users_seq
+Hibernate: create table bid_list (ask float(53), ask_quantity float(53), bid float(53), bid_list_id integer not null auto_increment, bid_quantity float(53) not null, bid_list_date datetime(6), creation_date datetime(6), revision_date datetime(6), account varchar(255), benchmark varchar(255), book varchar(255), commentary varchar(255), creation_name varchar(255), deal_name varchar(255), deal_type varchar(255), revision_name varchar(255), security varchar(255), side varchar(255), source_list_id varchar(255), status varchar(255), trader varchar(255), type varchar(255), primary key (bid_list_id)) engine=InnoDB
+Hibernate: create table curve_point (curve_id integer, id integer not null auto_increment, term float(53), value float(53), as_of_date datetime(6), creation_date datetime(6), primary key (id)) engine=InnoDB
+Hibernate: create table rating (id integer not null auto_increment, order_number integer, fitch_rating varchar(125), moodys_rating varchar(125), sandprating varchar(125), primary key (id)) engine=InnoDB
+Hibernate: create table rule_name (id integer not null auto_increment, description varchar(125), json varchar(125), name varchar(125), sql_part varchar(125), sql_str varchar(125), template varchar(512), primary key (id)) engine=InnoDB
+Hibernate: create table trade (buy_price float(53), buy_quantity float(53), sell_price float(53), sell_quantity float(53), trade_id integer not null auto_increment, creation_date datetime(6), revision_date datetime(6), trade_date datetime(6), account varchar(30) not null, type varchar(30) not null, benchmark varchar(255), book varchar(255), creation_name varchar(255), deal_name varchar(255), deal_type varchar(255), revision_name varchar(255), security varchar(255), side varchar(255), source_list_id varchar(255), status varchar(255), trader varchar(255), primary key (trade_id)) engine=InnoDB
+Hibernate: create table users (id integer not null, fullname varchar(255), password varchar(255), role varchar(255), username varchar(255), primary key (id)) engine=InnoDB
+Hibernate: create table users_seq (next_val bigint) engine=InnoDB
+Hibernate: insert into users_seq values ( 1 )
+2025-09-06T12:33:40.832+02:00  INFO 16108 --- [           main] o.h.t.s.i.e.GenerationTargetToDatabase   : HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2025-09-06T12:33:40.834+02:00  INFO 16108 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-06T12:33:41.340+02:00  WARN 16108 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-06T12:33:41.761+02:00  INFO 16108 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45149573, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8b64a15, org.springframework.security.web.context.SecurityContextHolderFilter@7789af0b, org.springframework.security.web.header.HeaderWriterFilter@22b5f886, org.springframework.security.web.csrf.CsrfFilter@1c067ae4, org.springframework.security.web.authentication.logout.LogoutFilter@a3d02fe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@17b255ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b27b44d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a45802c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54584f9, org.springframework.security.web.access.ExceptionTranslationFilter@202b279a, org.springframework.security.web.access.intercept.AuthorizationFilter@3ea65704]
+2025-09-06T12:33:42.030+02:00  INFO 16108 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-09-06T12:33:42.030+02:00  INFO 16108 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-09-06T12:33:42.031+02:00  INFO 16108 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-09-06T12:33:42.045+02:00  INFO 16108 --- [           main] c.n.s.i.BidControllerIntegrationTest     : Started BidControllerIntegrationTest in 4.714 seconds (process running for 6.435)
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+2025-09-06T12:33:42.652+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Validating new bid
+Hibernate: insert into bid_list (account,ask,ask_quantity,benchmark,bid,bid_list_date,bid_quantity,book,commentary,creation_date,creation_name,deal_name,deal_type,revision_date,revision_name,security,side,source_list_id,status,trader,type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-09-06T12:33:42.685+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList created with id=1
+2025-09-06T12:33:42.690+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Bid created successfully
+
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateBid" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.035">
+    <system-out><![CDATA[Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+Hibernate: delete from bid_list where bid_list_id=?
+Hibernate: insert into bid_list (account,ask,ask_quantity,benchmark,bid,bid_list_date,bid_quantity,book,commentary,creation_date,creation_name,deal_name,deal_type,revision_date,revision_name,security,side,source_list_id,status,trader,type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-09-06T12:33:42.734+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList saved id=2
+2025-09-06T12:33:42.738+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Updating bid id: 2
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0 where b1_0.bid_list_id=?
+2025-09-06T12:33:42.743+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList updated id=2
+Hibernate: update bid_list set account=?,ask=?,ask_quantity=?,benchmark=?,bid=?,bid_list_date=?,bid_quantity=?,book=?,commentary=?,creation_date=?,creation_name=?,deal_name=?,deal_type=?,revision_date=?,revision_name=?,security=?,side=?,source_list_id=?,status=?,trader=?,type=? where bid_list_id=?
+2025-09-06T12:33:42.749+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Bid updated successfully for id: 2
+
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0 where b1_0.bid_list_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="testValidateBidErrorForm" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.254">
+    <system-out><![CDATA[Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+Hibernate: delete from bid_list where bid_list_id=?
+2025-09-06T12:33:42.761+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Validating new bid
+2025-09-06T12:33:42.761+02:00  WARN 16108 --- [           main] c.n.s.controllers.BidListController      : Bid validation failed
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title>Ajouter Bid</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+
+	<div class="row">
+		<h2>Ajouter Bid</h2>
+	</div>
+
+	<div class="row">
+		<form action="/bidList/validate" method="post" class="form-horizontal" style="width: 100%"><input type="hidden" name="_csrf" value="fTILEuSfa1UeLy2slmMYh_s3T4EgLWnz77EX2I-Y_Lxx6HrHRFY5dtWtWzczTE6c8k4s5p1TYuMYTwje2oEj6O2py4UU2xj_"/>
+			<input type="hidden" name="_csrf" value="fTILEuSfa1UeLy2slmMYh_s3T4EgLWnz77EX2I-Y_Lxx6HrHRFY5dtWtWzczTE6c8k4s5p1TYuMYTwje2oEj6O2py4UU2xj_">
+			<div class="form-group">
+				<label for="account" class="col-sm-2 control-label">Account</label>
+				<div class="col-sm-10">
+					<input type="text" id="account" placeholder="Account" class="col-4" required name="account" value="">
+					<p class="text-danger">Account is mandatory</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="type" class="col-sm-2 control-label">Type</label>
+				<div class="col-sm-10">
+					<input type="text" id="type" placeholder="Type" class="col-4" required name="type" value="Type test">
+					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bidQuantity" class="col-sm-2 control-label">Bid Quantity</label>
+				<div class="col-sm-10">
+					<input type="number" step="0.01" id="bidQuantity" placeholder="Bid Quantity" class="col-4" required name="bidQuantity" value="10.0">
+					
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<a class="btn btn-danger btn-sm" href="/bidList/list">Retour</a>
+					<input class="btn btn-primary btn-sm" type="submit" value="Enregistrer">
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+</body>
+</html>
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+]]></system-out>
+  </testcase>
+  <testcase name="testShowUpdateForm" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.019">
+    <system-out><![CDATA[Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+Hibernate: insert into bid_list (account,ask,ask_quantity,benchmark,bid,bid_list_date,bid_quantity,book,commentary,creation_date,creation_name,deal_name,deal_type,revision_date,revision_name,security,side,source_list_id,status,trader,type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-09-06T12:33:43.012+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList saved id=3
+2025-09-06T12:33:43.017+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Displaying update form for bid id: 3
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0 where b1_0.bid_list_id=?
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title>Modifier Bid</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<h2>Modifier Bid</h2>
+	</div>
+
+	<div class="row">
+		<form action="/bidList/update/3" method="post" class="form-horizontal" style="width: 100%"><input type="hidden" name="_csrf" value="phPdSoaswZbBmX7FWwLcdM4mz_9gNLrimV5zq_WWxGPXBVGQwyPkfrHI-aTs_Ebwbi_oEKsW4p1ZAonPoG4Sn5empwHvPTeg"/>
+			<input type="hidden" name="_csrf" value="phPdSoaswZbBmX7FWwLcdM4mz_9gNLrimV5zq_WWxGPXBVGQwyPkfrHI-aTs_Ebwbi_oEKsW4p1ZAonPoG4Sn5empwHvPTeg">
+			<div class="form-group">
+				<label for="account" class="col-sm-2 control-label">Account</label>
+				<div class="col-sm-10">
+					<input type="text" id="account" placeholder="Account" class="col-4" required name="account" value="Account test">
+					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="type" class="col-sm-2 control-label">Type</label>
+				<div class="col-sm-10">
+					<input type="text" id="type" placeholder="Type" class="col-4" required name="type" value="Type test">
+					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bidQuantity" class="col-sm-2 control-label">Bid Quantity</label>
+				<div class="col-sm-10">
+					<input type="number" step="0.01" id="bidQuantity" placeholder="Bid Quantity" class="col-4" required name="bidQuantity" value="10.0">
+					
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="hidden" id="bidListId" name="bidListId" value="3">
+					<a class="btn btn-danger btn-sm" href="/bidList/list">Retour</a>
+					<input class="btn btn-primary btn-sm" type="submit" value="Mettre à jour">
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+</body>
+</html>
+]]></system-out>
+  </testcase>
+  <testcase name="testGetBidList" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.027">
+    <system-out><![CDATA[Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+Hibernate: delete from bid_list where bid_list_id=?
+Hibernate: insert into bid_list (account,ask,ask_quantity,benchmark,bid,bid_list_date,bid_quantity,book,commentary,creation_date,creation_name,deal_name,deal_type,revision_date,revision_name,security,side,source_list_id,status,trader,type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-09-06T12:33:43.033+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList saved id=4
+Hibernate: insert into bid_list (account,ask,ask_quantity,benchmark,bid,bid_list_date,bid_quantity,book,commentary,creation_date,creation_name,deal_name,deal_type,revision_date,revision_name,security,side,source_list_id,status,trader,type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-09-06T12:33:43.035+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList saved id=5
+2025-09-06T12:33:43.039+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Displaying bid list
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+2025-09-06T12:33:43.041+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : Fetched 2 BidList entries
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title>Home</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<a href="/bidList/list">Bid List</a>&nbsp;|&nbsp;
+			<a href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp;
+			<a href="/rating/list">Ratings</a>&nbsp;|&nbsp;
+			<a href="/trade/list">Trade</a>&nbsp;|&nbsp;
+			<a href="/ruleName/list">Rule</a>
+		</div>
+		<div class="col-6 text-right">
+			Logged in user: <b>testuser</b>
+			<form action="/logout" method="post"><input type="hidden" name="_csrf" value="uNPdaSKdrtCkhymaI92pwOmZ-2HbT5iBdQocERgdvxXjf7vT2eDtDUGkmuSJsB6sGvCd-Nn61ljjLf6sETp-JHkliyHWHoPl"/>
+				<input type="hidden" name="_csrf" value="uNPdaSKdrtCkhymaI92pwOmZ-2HbT5iBdQocERgdvxXjf7vT2eDtDUGkmuSJsB6sGvCd-Nn61ljjLf6sETp-JHkliyHWHoPl"/>
+				<input type="submit" value="Logout"/>
+			</form>
+		</div>
+	</div>
+	<div class="row"><h2>Bid List</h2></div>
+	<div class="row">
+		<a href="/bidList/add" class="btn btn-primary btn-sm">Add New</a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Account</th>
+					<th>Type</th>
+					<th>Bid Quantity</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="width: 10%">4</td>
+					<td>Account test</td>
+					<td>Type test</td>
+					<td>10.0</td>
+					<td style="width: 15%" class="text-center">
+						<a href="/bidList/update/4">Edit</a>&nbsp;|&nbsp;
+						<a href="/bidList/delete/4">Delete</a>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 10%">5</td>
+					<td>Account test2</td>
+					<td>Type test2</td>
+					<td>20.0</td>
+					<td style="width: 15%" class="text-center">
+						<a href="/bidList/update/5">Edit</a>&nbsp;|&nbsp;
+						<a href="/bidList/delete/5">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteBid" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.017">
+    <system-out><![CDATA[Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+Hibernate: delete from bid_list where bid_list_id=?
+Hibernate: delete from bid_list where bid_list_id=?
+Hibernate: insert into bid_list (account,ask,ask_quantity,benchmark,bid,bid_list_date,bid_quantity,book,commentary,creation_date,creation_name,deal_name,deal_type,revision_date,revision_name,security,side,source_list_id,status,trader,type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-09-06T12:33:43.061+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList saved id=6
+2025-09-06T12:33:43.063+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Deleting bid id: 6
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0 where b1_0.bid_list_id=?
+2025-09-06T12:33:43.066+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList deleted id=6
+Hibernate: delete from bid_list where bid_list_id=?
+2025-09-06T12:33:43.067+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Bid deleted successfully for id: 6
+
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+2025-09-06T12:33:43.070+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : Fetched 0 BidList entries
+]]></system-out>
+  </testcase>
+  <testcase name="testAddBidForm" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.008">
+    <system-out><![CDATA[Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+2025-09-06T12:33:43.075+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Displaying add bid form
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title>Ajouter Bid</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+
+	<div class="row">
+		<h2>Ajouter Bid</h2>
+	</div>
+
+	<div class="row">
+		<form action="/bidList/validate" method="post" class="form-horizontal" style="width: 100%"><input type="hidden" name="_csrf" value="2XphS-qTQ_tjgOmocw-USXfVfICieMxy4FgeHT9pw5yPXDHLu0kFKtL3dMhOsNiYRyKgexbtUeHHSvVf1Wt9LFpe8KzpPQf-"/>
+			<input type="hidden" name="_csrf" value="2XphS-qTQ_tjgOmocw-USXfVfICieMxy4FgeHT9pw5yPXDHLu0kFKtL3dMhOsNiYRyKgexbtUeHHSvVf1Wt9LFpe8KzpPQf-">
+			<div class="form-group">
+				<label for="account" class="col-sm-2 control-label">Account</label>
+				<div class="col-sm-10">
+					<input type="text" id="account" placeholder="Account" class="col-4" required name="account" value="">
+					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="type" class="col-sm-2 control-label">Type</label>
+				<div class="col-sm-10">
+					<input type="text" id="type" placeholder="Type" class="col-4" required name="type" value="">
+					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bidQuantity" class="col-sm-2 control-label">Bid Quantity</label>
+				<div class="col-sm-10">
+					<input type="number" step="0.01" id="bidQuantity" placeholder="Bid Quantity" class="col-4" required name="bidQuantity" value="">
+					
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<a class="btn btn-danger btn-sm" href="/bidList/list">Retour</a>
+					<input class="btn btn-primary btn-sm" type="submit" value="Enregistrer">
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+</body>
+</html>
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateBidErrorForm" classname="com.nnk.springboot.integration.BidControllerIntegrationTest" time="0.012">
+    <system-out><![CDATA[Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0
+Hibernate: insert into bid_list (account,ask,ask_quantity,benchmark,bid,bid_list_date,bid_quantity,book,commentary,creation_date,creation_name,deal_name,deal_type,revision_date,revision_name,security,side,source_list_id,status,trader,type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-09-06T12:33:43.083+02:00  INFO 16108 --- [           main] c.n.s.services.impl.BidListServiceImpl   : BidList saved id=7
+2025-09-06T12:33:43.086+02:00  INFO 16108 --- [           main] c.n.s.controllers.BidListController      : Updating bid id: 7
+2025-09-06T12:33:43.087+02:00  WARN 16108 --- [           main] c.n.s.controllers.BidListController      : Bid update validation failed for id: 7
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title>Modifier Bid</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<h2>Modifier Bid</h2>
+	</div>
+
+	<div class="row">
+		<form action="/bidList/update/7" method="post" class="form-horizontal" style="width: 100%"><input type="hidden" name="_csrf" value="IvzT9nSGnW3VZiU6Pc1vPRutZoU0dqO-9-Ecj-25oa5_29HiFprjkBbk_lv4URcPDuBbD36bS71XFcaTxtUlu9mIkZwd7OSH"/>
+			<input type="hidden" name="_csrf" value="IvzT9nSGnW3VZiU6Pc1vPRutZoU0dqO-9-Ecj-25oa5_29HiFprjkBbk_lv4URcPDuBbD36bS71XFcaTxtUlu9mIkZwd7OSH">
+			<div class="form-group">
+				<label for="account" class="col-sm-2 control-label">Account</label>
+				<div class="col-sm-10">
+					<input type="text" id="account" placeholder="Account" class="col-4" required name="account" value="Account test">
+					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="type" class="col-sm-2 control-label">Type</label>
+				<div class="col-sm-10">
+					<input type="text" id="type" placeholder="Type" class="col-4" required name="type" value="Type test">
+					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bidQuantity" class="col-sm-2 control-label">Bid Quantity</label>
+				<div class="col-sm-10">
+					<input type="number" step="0.01" id="bidQuantity" placeholder="Bid Quantity" class="col-4" required name="bidQuantity" value="">
+					<p class="text-danger">Bid quantity cannot be null.</p>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="hidden" id="bidListId" name="bidListId" value="7">
+					<a class="btn btn-danger btn-sm" href="/bidList/list">Retour</a>
+					<input class="btn btn-primary btn-sm" type="submit" value="Mettre à jour">
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+</body>
+</html>
+Hibernate: select b1_0.bid_list_id,b1_0.account,b1_0.ask,b1_0.ask_quantity,b1_0.benchmark,b1_0.bid,b1_0.bid_list_date,b1_0.bid_quantity,b1_0.book,b1_0.commentary,b1_0.creation_date,b1_0.creation_name,b1_0.deal_name,b1_0.deal_type,b1_0.revision_date,b1_0.revision_name,b1_0.security,b1_0.side,b1_0.source_list_id,b1_0.status,b1_0.trader,b1_0.type from bid_list b1_0 where b1_0.bid_list_id=?
+]]></system-out>
+  </testcase>
+</testsuite>
