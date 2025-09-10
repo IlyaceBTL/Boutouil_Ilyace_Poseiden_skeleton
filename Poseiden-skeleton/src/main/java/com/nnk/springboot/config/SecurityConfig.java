@@ -29,7 +29,7 @@ public class SecurityConfig {
      * Defines the HTTP security filter chain:
      * - Public endpoints: /login, /css/**, /403
      * - USER or ADMIN required: /bidList/**, /curvePoint/**, /rating/**, /ruleName/**, /trade/**
-     * - ADMIN only: /admin/**, /user/**
+     * - ADMIN only: /user/**
      * - Form login with custom username/password params and default success URL
      * - Logout mapping and access denied page
      *
