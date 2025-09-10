@@ -11,8 +11,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Service personnalisé pour la récupération des détails d'un utilisateur
- * utilisé par Spring Security lors de l'authentification.
+ * Custom service for retrieving user details,
+ * used by Spring Security during authentication.
  */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -20,20 +20,20 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final UserService userService;
 
     /**
-     * Constructeur du service CustomUserDetailsService.
+     * Constructor for CustomUserDetailsService.
      *
-     * @param userService le service permettant d'accéder aux utilisateurs
+     * @param userService the service used to access users
      */
     public CustomUserDetailsService(UserService userService) {
         this.userService = userService;
     }
 
     /**
-     * Charge les détails d'un utilisateur à partir de son nom d'utilisateur.
+     * Loads user details by username.
      *
-     * @param username le nom d'utilisateur
-     * @return les détails de l'utilisateur pour Spring Security
-     * @throws UsernameNotFoundException si l'utilisateur n'est pas trouvé
+     * @param username the username
+     * @return the user details for Spring Security
+     * @throws UsernameNotFoundException if the user is not found
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
